@@ -1,0 +1,137 @@
+.bqb-steps-indicator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.bqb-step {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    text-decoration: none;
+}
+
+.bqb-step-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.8rem;
+    color: #fff;
+    background-color: #BABABA;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+}
+
+.bqb-step-icon img {
+
+    width: 70%;
+    max-height: 70%;
+    height: auto;
+}
+
+.bqb-step-label {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #BABABA;
+    font-size: 1.5rem;
+    transition: all .2s ease;
+    text-decoration: none;
+}
+
+
+/* No clickeables por default */
+a.bqb-step {
+    text-decoration: none;
+    pointer-events: none;
+}
+
+.bqb-step-arrow {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #BABABA;
+    position: relative;
+    transition: all .2s ease;
+}
+
+
+.bqb-step-arrow:after {
+    content: "";
+    display: inline-block;
+    height: 8px;
+    right: 0;
+    position: absolute;
+    top: -3px;
+    width: 8px;
+    border-style: solid;
+    border-width: 0 0 8px 8px;
+    height: 0;
+    width: 0;
+    border-color: transparent;
+    border-bottom-color: transparent;
+    border-bottom-color: #BABABA;
+    transform: rotate(-45deg);
+    transition: all .2s ease;
+}
+
+.bqb-step:last-child {
+    flex: 0 0 auto;
+}
+
+/* No mostrar flecha en el ultimo step */
+
+.bqb-step:last-child .bqb-step-arrow {
+    display: none;
+}
+
+
+/* ESTILOS DE PASO ACTIVO */
+
+/* Hacer clickeables */
+.bqb-step.active.completed {
+    pointer-events: all;
+}
+
+.bqb-step.active .bqb-step-icon {
+    background-color: #007AD0;
+}
+
+.bqb-step.active .bqb-step-label {
+    color: #007AD0;
+}
+
+
+/* ESTILOS DE PASOS YA COMPLETADOS */
+
+.bqb-step.active.completed .bqb-step-icon {
+    background-color: #ACD2EC !important;
+}
+
+.bqb-step.active.completed .bqb-step-label {
+    color: #ACD2EC !important;
+}
+
+.bqb-step.active.completed .bqb-step-arrow {
+    background-color: #ACD2EC !important;
+}
+
+.bqb-step.active.completed .bqb-step-arrow:after {
+    border-bottom-color: #ACD2EC !important;
+}
+
+
+@media (max-width: 576px) {
+    /* No mostrar label en mobile */
+    .bqb-step-label {
+        display: none !important;
+    }
+}

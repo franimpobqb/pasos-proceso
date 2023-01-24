@@ -24,118 +24,10 @@
     <link rel="stylesheet" href="https://www.buquebus.com/Portal/resources/Bqb/scss/purchase/_passenger.scss">
     <link rel="stylesheet" href="https://www.buquebus.com/Portal/resources/Bqb/scss/commons/_Bqb-style.scss">
     <link href="https://www.buquebus.com/Portal/resources/css/select2.min.css?v=1672842971868" rel="stylesheet" />
-    <link rel="stylesheet" href="cargapasajeros.css">
+    <link rel="stylesheet" href="estilos.css">
 
     <style>
-        .bqb-steps-indicator {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-        }
-
-        .bqb-step {
-            flex: 1 1 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: .75rem;
-
-        }
-
-        .bqb-step-icon {
-            width: 35px;
-            height: 35px;
-            font-size: 1.8rem;
-            color: #fff;
-            background-color: #BABABA;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .bqb-step-icon img {
-
-            width: 70%;
-            max-height: 70%;
-            height: auto;
-        }
-
-        .bqb-step-name {
-            text-transform: uppercase;
-            font-weight: 700;
-            color: #BABABA;
-            font-size: 1.5rem;
-        }
-
-        .bqb-step-arrow {
-            flex-grow: 1;
-            height: 1px;
-            background-color: #BABABA;
-            position: relative;
-        }
-
-
-        .bqb-step-arrow:after {
-            content: "";
-            display: inline-block;
-            height: 8px;
-            right: 0;
-            position: absolute;
-            top: -3px;
-            width: 8px;
-            border-style: solid;
-            border-width: 0 0 8px 8px;
-            height: 0;
-            width: 0;
-            border-color: transparent;
-            border-bottom-color: transparent;
-            border-bottom-color: #BABABA;
-            transform: rotate(-45deg);
-        }
-
-        .bqb-step:last-child {
-            flex: 0 0 auto;
-            /* fixed width */
-        }
-
-        .bqb-step:last-child .bqb-step-arrow {
-            display: none;
-        }
-
-        .bqb-step.active .bqb-step-icon {
-            background-color: #007AD0;
-        }
-
-        .bqb-step.active .bqb-step-name {
-            color: #007AD0;
-        }
-
-
-
-        .bqb-step.completed .bqb-step-icon {
-            background-color: #ACD2EC !important;
-        }
-
-        .bqb-step.completed .bqb-step-name {
-            color: #ACD2EC !important;
-        }
-
-        .bqb-step.completed .bqb-step-arrow {
-            background-color: #ACD2EC !important;
-        }
-
-        .bqb-step.completed .bqb-step-arrow:after {
-            border-bottom-color: #ACD2EC !important;
-        }
-
-        @media (max-width: 576px) {
-            .bqb-step-name {
-          display: none !important;
-        }
-        }
+      
     </style>
 </head>
 <br>
@@ -151,34 +43,34 @@
                 <div class="bqb-col-12">
                     <nav class="bqb-breadcrumb">
                         <div class="bqb-steps-indicator">
-                            <div class="bqb-step">
+                            <a href="#" class="bqb-step active" data-stepnum="0">
                                 <div class="bqb-step-icon">
                                     <img src="icon-step-ship.svg" alt="Icono Barco">
                                 </div>
-                                <div class="bqb-step-name">Selección de pasaje</div>
+                                <div class="bqb-step-label">Selección de pasaje</div>
                                 <div class="bqb-step-arrow"></div>
-                            </div>
-                            <div class="bqb-step">
+                            </a href="#">
+                            <a href="#" class="bqb-step" data-stepnum="1">
                                 <div class="bqb-step-icon">
                                     <img src="icon-step-ticket.svg" alt="Icono Ticket">
                                 </div>
-                                <div class="bqb-step-name">Resumen de compra</div>
+                                <div class="bqb-step-label">Resumen de compra</div>
                                 <div class="bqb-step-arrow"></div>
-                            </div>
-                            <div class="bqb-step">
+                            </a href="#">
+                            <a href="#" class="bqb-step" data-stepnum="2">
                                 <div class="bqb-step-icon">
                                     <img src="icon-step-user.svg" alt="Icono Usuario">
                                 </div>
-                                <div class="bqb-step-name">Carga de pasajeros</div>
+                                <div class="bqb-step-label">Carga de pasajeros</div>
                                 <div class="bqb-step-arrow"></div>
-                            </div>
-                            <div class="bqb-step">
+                            </a href="#">
+                            <a href="#" class="bqb-step" data-stepnum="3">
                                 <div class="bqb-step-icon">
                                     <img src="icon-step-check.svg" alt="Icono Check">
                                 </div>
-                                <div class="bqb-step-name">Pago y confirmación</div>
+                                <div class="bqb-step-label">Pago y confirmación</div>
                                 <div class="bqb-step-arrow"></div>
-                            </div>
+                            </a href="#">
 
                         </div>
                     </nav>
@@ -186,10 +78,15 @@
             </div>
             <div class="bqb-row">
                 <div class="bqb-col-12">
-                    <nav class="bqb-breadcrumb">
 
 
-                        <h1>Selección de pasaje</h1>
+
+                    <h1>Selección de pasaje</h1>
+
+                    <section id="nextpad">
+                        <button class=" button-primary previous" onclick="previous()"><span>Volver</span></button>
+                        <button class=" button-primary next" onclick="next()"><span>Siguiente</span></button>
+                      </section>
                 </div>
             </div>
 
@@ -202,33 +99,7 @@
         <img src="footer.png" style="width: 100%;" alt="">
     </footer>
     <script src="https://www.buquebus.com/Portal/resources/Bqb/js/bootstrap.bundle.min.js?version=1.10.13"></script>
-    <script src="https://www.buquebus.com/Portal/resources/Bqb/js/daterangepicker.min.js?version=1.10.13"></script>
-    <script src="https://www.buquebus.com/Portal/resources/js/purchase/componentRememberPassword.js?version=1.10.13">
-    </script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/commons/componentLogin.js?v=1672842969869"></script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/home/componentNewsletter.js?v=1672842969869"></script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/pages/componentPage.js?v=1672842969869"></script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/elemental-page/componentHeader.js?v=1672842969869">
-    </script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/elemental-page/listElement.js?v=1672842969869"></script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/lib/owl.carousel.min.js?v=1672842969869"></script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/commons/select2.min.js?v=1672842971868"></script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/purchase/Bqb/componentPassengerUI.js?v=1672842971868">
-    </script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/purchase/componentPassenger.js?v=1672842971868"></script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/home/componentNewsletter.js?v=1672842971868"></script>
-
-    <script src="https://www.buquebus.com/Portal/resources/js/summary/componentSummary.js?v=1672842971868"></script>
+    <script src="scripts.js"></script>
     <script src="" async defer></script>
 </body>
 
