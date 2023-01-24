@@ -129,7 +129,7 @@ a.bqb-step {
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     /* No mostrar label en mobile */
     .bqb-step-label {
         display: none !important;
